@@ -1298,9 +1298,16 @@ hash(x::Prehashed) = x.hash
 
 Returns an array containing only the unique elements of the iterable `itr`, in
 the order that the first of each set of equivalent elements originally appears.
+The unicity is determined by [`isequal`](@ref).
 If `dim` is specified, returns unique regions of the array `itr` along `dim`.
 
 ```jldoctest
+julia> unique([1, 2, 6, 2])
+3-element Array{Int64,1}:
+ 1
+ 2
+ 6
+
 julia> A = map(isodd, reshape(collect(1:8), (2,2,2)))
 2×2×2 Array{Bool,3}:
 [:, :, 1] =

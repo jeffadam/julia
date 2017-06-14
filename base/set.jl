@@ -120,20 +120,6 @@ const ⊆ = issubset
 ⊉(l::Set, r::Set) = !⊇(l, r)
 ⊋(l::Set, r::Set) = <(r, l)
 
-"""
-    unique(itr)
-
-Returns an array containing one value from `itr` for each unique value,
-as determined by [`isequal`](@ref).
-
-```jldoctest
-julia> unique([1; 2; 2; 6])
-3-element Array{Int64,1}:
- 1
- 2
- 6
-```
-"""
 function unique(itr)
     T = _default_eltype(typeof(itr))
     out = Vector{T}()
